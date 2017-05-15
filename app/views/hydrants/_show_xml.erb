@@ -1,0 +1,12 @@
+<?xml version="1.0" ?> 
+<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml">
+<channel>
+		<item>
+			<title><%=@hydrant.color%> hydrant</title>
+			<description><![CDATA[<img src="../images/<%=@hydrant.color.downcase%>.jpg" style="width:100px;height:100px;" />]]></description>
+			<icon>../images/<%=@hydrant.color%>-hydrant.png</icon>
+			<geo:lat><%=@hydrant.latitude%></geo:lat>
+			<geo:long><%=@hydrant.longitude%></geo:long>
+		</item>
+</channel>
+</rss>

@@ -1,0 +1,40 @@
+<% content_for :javascript do %>
+	<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+	<%=javascript_include_tag 'bingmap'%>
+<%end%>
+<h1>Listing hydrants</h1>
+<div id="map_wrapper">
+	<div class="hidden">
+		<span id="pathname">hydrants</span>
+		<span id="start_lat">47.4914423729907</span>
+		<span id="start_lon">-117.58315086364748</span>
+		<span id="load_markers">true</span>
+	</div>
+	<div id="map_canvas" style="position:relative; width:500px; height:300px;">
+	</div>
+</div>
+	
+<table>
+  <tr>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Serviced</th>
+    <th>Color</th>
+  </tr>
+
+<% @hydrants.each do |hydrant| %>
+  <tr>
+    <td><%=h hydrant.latitude %></td>
+    <td><%=h hydrant.longitude %></td>
+    <td><%=h hydrant.serviced %></td>
+    <td><%=h hydrant.color %></td>
+    <td><%= link_to 'Show', hydrant %></td>
+    <td><%= link_to 'Edit', edit_hydrant_path(hydrant) %></td>
+    <td><%= link_to 'Destroy', hydrant, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New hydrant', new_hydrant_path %>

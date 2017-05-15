@@ -1,0 +1,32 @@
+<% content_for :javascript do %>
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2">
+</script>
+<%=javascript_include_tag 'bingmap' %>
+<%end %>
+<div id="map_wrapper">
+    <div class="hidden">
+        <span id="pathname">hydrants/<%=params[:id] %></span>
+        <span id="start_lat">47.4914423729907</span>
+        <span id="start_lon">-117.58315086364748</span>
+        <span id="load_markers">true</span>
+    </div>
+    <div id="map_canvas" style="position:relative; width:500px; height:300px;">
+    </div>
+</div>
+<p>
+    <b>Latitude:</b>
+    <%=h @hydrant.latitude %>
+</p>
+<p>
+    <b>Longitude:</b>
+    <%=h @hydrant.longitude %>
+</p>
+<p>
+    <b>Serviced:</b>
+    <%=h @hydrant.serviced %>
+</p>
+<p>
+    <b>Color:</b>
+    <%=h @hydrant.color %>
+</p>
+<%= link_to 'Edit', edit_hydrant_path(@hydrant) %> |<%= link_to 'Back', hydrants_path %>

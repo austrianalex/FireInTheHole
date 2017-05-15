@@ -1,0 +1,18 @@
+<p>
+  <b>Street:</b>
+  <%=h @location.street %>
+</p>
+
+<p>
+  <b>House num:</b>
+  <%=h @location.house_num %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @location.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

@@ -1,0 +1,44 @@
+<% content_for :javascript do %>
+	<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2"></script>
+	<%=javascript_include_tag 'bingmap'%>
+<%end%>
+<h1>New hydrant</h1>
+<div id="map_wrapper">
+	<div class="hidden">
+		<span id="pathname">hydrant</span>
+		<span id="start_lat">47.4914423729907</span>
+		<span id="start_lon">-117.58315086364748</span>
+		<span id="load_markers">false</span>
+	</div>
+	<div id="map_canvas" style="position:relative; width:500px; height:300px;">
+	</div>
+</div>
+<% form_for(@hydrant) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :serviced %><br />
+    <%= f.datetime_select :serviced %>
+  </p>
+  <p>
+    <%= f.label :color %><br />
+    <select id="hydrant[color]" name="hydrant[color]">
+    	<option value="red">Red</option>
+		<option value="green">Green</option>
+		<option value="yellow">Yellow</option>
+    </select>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', hydrants_path %>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Subordinate
+Version    : 1.0
+Released   : 20080412
+Description: A two-column, fixed-width and lightweight template ideal for 1024x768 resolutions. Suitable for blogs and small websites.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>FirinTehole</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<%= stylesheet_link_tag 'main' %>
+<%= stylesheet_link_tag 'bingmap' %>
+<%= stylesheet_link_tag 'autocomplete' %>
+<%=javascript_include_tag 'jquery'%>
+<%=javascript_include_tag 'dimensions'%>
+<%=javascript_include_tag 'autocomplete'%>
+<script>
+$(function(){
+    setAutoComplete("s", "results", "/search/location.js?part=");
+});
+
+//	$("#s").liveSearch(
+//	{url: '/search/all'}
+//	);
+</script>
+<%= yield :javascript %>
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="#"><span class="numbertxt">01&nbsp;</span>Homepage</a></li>
+			<!--<li><a href="#"><span class="numbertxt">02&nbsp;</span>Blogs</a></li>
+			<li><a href="#"><span class="numbertxt">03&nbsp;</span>Photos</a></li>
+			<li><a href="#"><span class="numbertxt">04&nbsp;</span>About</a></li>
+			<li class="last"><a href="#"><span class="numbertxt">05&nbsp;</span>Contact</a></li>-->
+		</ul>
+	</div>
+</div>
+<div id="logo">
+	<h1><a href="#">Subordinate</a></h1>
+	<h2> Design by Free Css Templates</h2>
+</div>
+<!-- end header -->
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+			<p style="color: green"><%= flash[:notice] %></p>
+			<%= yield %>
+		</div>
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li id="search">
+				<h2>Search</h2>
+				<form method="get" action="">
+					<fieldset>
+					<input type="text" id="s" name="s" value="" />
+					<input type="submit" id="x" value="Search" />
+					</fieldset>
+				</form>
+			</li>
+			<li>
+				<h2>Menu</h2>
+				<ul>
+					<li><%=link_to 'Group Control', :controller=>'groups' %></li>
+					<li><%=link_to 'User Control', :controller => 'users' %></li>
+					<li><%=link_to 'Hydrant Control', :controller => 'hydrants' %></li>
+					<li><%=link_to 'Location Control', :controller => 'locations' %></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Volutpat Dolore</h2>
+				<ul>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+					<li><a href="#">Eget tempor eget nonummy</a></li>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div id="footer-wrap">
+	<p id="legal">(c) 2009 AustrianAlex. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+	</div>
+</div>
+<!-- end footer -->
+</body>
+</html>

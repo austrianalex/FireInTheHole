@@ -1,0 +1,28 @@
+.selectedPushpin
+{
+	border: 1px solid #C00;
+}
+.nearby
+{
+	cursor:pointer;
+}
+#map_wrapper
+{
+	clear:both;
+}
+#map_canvas
+{
+	top: 0px;
+	left: 10px;
+	border:#555555 2px solid;
+}
+#messages
+{
+	width: 300px;
+	color: #FFF;
+	background-color:#333;
+	border:thick #000;
+	display:none;
+}
+#MSVE_obliqueNotification {visibility: hidden;} 
+.hidden{display:none;}
